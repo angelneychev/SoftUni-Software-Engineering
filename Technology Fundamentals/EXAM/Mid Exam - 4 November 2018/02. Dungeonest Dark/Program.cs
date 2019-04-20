@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-
+//Programming Fundamentals - Mid Exam - 4 November 2018
 namespace _02._Dungeonest_Dark
 {
     class Program

@@ -1,2 +1,2 @@
 # SoftUni-Software-Engineering
-Courses SoftUni Software Engineering
+Courses from the main program in SoftUni

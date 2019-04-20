@@ -21,6 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Weather Forecast", "08.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. Weather Forecast - Part 2", "09. Weather Forecast - Part 2\09. Weather Forecast - Part 2.csproj", "{88EB8BEC-6A5A-4A88-AF91-C4E4D7ACD076}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B239CC71-DE01-4A91-9211-F1651608EBF1}"
+	ProjectSection(SolutionItems) = preProject
+		1. PB-More-Simple-Operations-Exercises.docx = 1. PB-More-Simple-Operations-Exercises.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

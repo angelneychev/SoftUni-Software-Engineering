@@ -40,7 +40,15 @@ namespace _01._Basic_Stack_Operations
             }
             else
             {
-                Console.WriteLine(stackNumbers.Min());
+                if (stackNumbers.Count == 0)
+                {
+                    Console.WriteLine("0");
+                }
+                else
+                {
+                    Console.WriteLine(stackNumbers.Min());
+                }
+                
             }
         }
     }

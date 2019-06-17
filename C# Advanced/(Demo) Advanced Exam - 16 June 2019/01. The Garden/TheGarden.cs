@@ -33,7 +33,7 @@ namespace _01._The_Garden
                 int col = int.Parse(tokens[2]);
                 if (command == "Harvest")
                 {
-                    if (isInside(matrix, row, col) && matrix[row][col] != " ")
+                    if (isInside(matrix, row, col))
                     {
                         switch (matrix[row][col])
                         {
@@ -54,31 +54,31 @@ namespace _01._The_Garden
                 else if (command == "Mole")
                 {
                     string direction = tokens[3];
-                    while (isInside(matrix, row, col) && matrix[row][col] !=" ")
-                    { 
+                    while (isInside(matrix, row, col))
+                    {
+                        if (matrix[row][col] !=" ")
+                        {
+                            countOfHarmed++;
+                        }
                         switch (direction)
                         {
                             case "up":
                                 matrix[row][col] = " ";
-                                countOfHarmed++;
                                 row -= 2;
                                 break;
 
                             case "down":
                                 matrix[row][col] = " ";
-                                countOfHarmed++;
                                 row += 2;
                                 break;
 
                             case "left":
                                 matrix[row][col] = " ";
-                                countOfHarmed++;
                                 col -= 2;
                                 break;
 
                             case "right":
                                 matrix[row][col] = " ";
-                                countOfHarmed++;
                                 col += 2;
                                 break;
                         }

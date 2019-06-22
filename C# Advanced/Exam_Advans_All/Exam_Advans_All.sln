@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Socks", "Socks\Socks.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelFunctions", "ExcelFunctions\ExcelFunctions.csproj", "{2D5DACB6-846A-446A-A2E4-7A1F243788FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubParty", "ClubParty\ClubParty.csproj", "{D76822A0-2404-4BD9-BB49-B5D2ADF8B95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tron Racers", "Tron Racers\Tron Racers.csproj", "{F7D23D99-2096-4204-BC5F-DBA24761EE9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{2D5DACB6-846A-446A-A2E4-7A1F243788FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5DACB6-846A-446A-A2E4-7A1F243788FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5DACB6-846A-446A-A2E4-7A1F243788FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76822A0-2404-4BD9-BB49-B5D2ADF8B95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76822A0-2404-4BD9-BB49-B5D2ADF8B95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76822A0-2404-4BD9-BB49-B5D2ADF8B95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76822A0-2404-4BD9-BB49-B5D2ADF8B95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D23D99-2096-4204-BC5F-DBA24761EE9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D23D99-2096-4204-BC5F-DBA24761EE9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D23D99-2096-4204-BC5F-DBA24761EE9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D23D99-2096-4204-BC5F-DBA24761EE9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

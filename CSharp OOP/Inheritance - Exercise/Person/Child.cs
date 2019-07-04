@@ -14,10 +14,11 @@
             get => base.Age;
             protected set
             {
-                if (value > 15)
-                {
-                    throw new ArgumentException("Child’s age must be less than 15!");
-                }
+                // объркано условие в задачата!!!!!
+                //if (value > 15)
+                //{
+                //    throw new ArgumentException("Child’s age must be less than 15!");
+                //}
 
                 base.Age = value;
             }

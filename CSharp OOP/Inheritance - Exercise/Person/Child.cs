@@ -1,7 +1,5 @@
 ﻿namespace Person
 {
-    using System;
-
     public class Child : Person
     {
         //Constructor

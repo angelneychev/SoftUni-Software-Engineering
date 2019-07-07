@@ -1,10 +1,11 @@
 ﻿using System;
+using DocuSign.eSign.Api;
 
 namespace Persons
 {
     public class StartUp
     {
-        private string persons;
+
         public static void Main()
         {
             //Person persons = new Person("Ivan","Petkov", 10);

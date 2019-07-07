@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persons", "01. Persons\Pers
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEST", "TEST\TEST.csproj", "{08539E44-B496-43F6-8B56-BCC0F30DFFA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salary", "Salary\Salary.csproj", "{1B04D175-728A-46CA-BCEE-262410DD8348}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{7D07908A-0131-4ACC-888D-308BA58C3202}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{08539E44-B496-43F6-8B56-BCC0F30DFFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08539E44-B496-43F6-8B56-BCC0F30DFFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08539E44-B496-43F6-8B56-BCC0F30DFFA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B04D175-728A-46CA-BCEE-262410DD8348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B04D175-728A-46CA-BCEE-262410DD8348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B04D175-728A-46CA-BCEE-262410DD8348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B04D175-728A-46CA-BCEE-262410DD8348}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D07908A-0131-4ACC-888D-308BA58C3202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D07908A-0131-4ACC-888D-308BA58C3202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D07908A-0131-4ACC-888D-308BA58C3202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D07908A-0131-4ACC-888D-308BA58C3202}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

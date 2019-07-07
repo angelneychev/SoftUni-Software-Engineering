@@ -1,12 +1,10 @@
-﻿namespace Persons
+﻿namespace PersonsInfo
 {
     public class Person
     {
         // 1. Add Fields
-        private string firstName;
-        private string lastName;
-        private int age;
         // 2. Add Constructor
+
         public Person(string firstName, string lastName, int age)
         {
             this.FirstName = firstName;

@@ -11,7 +11,7 @@
         {
             this.Height = height;
             this.Width = width;
-            this.Lenght = length;
+            this.Length = length;
         }
         public double Height
         {
@@ -39,14 +39,14 @@
             }
         }
 
-        public double Lenght
+        public double Length
         {
             get { return this.length; }
             set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException("Lenght cannot be zero or negative.");
+                    throw new ArgumentException("Length cannot be zero or negative.");
                 }
 
                 this.length = value;

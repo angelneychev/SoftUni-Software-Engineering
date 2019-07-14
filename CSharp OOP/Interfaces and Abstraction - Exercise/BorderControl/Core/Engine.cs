@@ -24,10 +24,10 @@ namespace BorderControl.Core
             while (command !="End")
             {
                 string[] tokens = command.Split().ToArray();
+                string name = tokens[0];
 
                 if (tokens.Length == 3)
                 {
-                    string name = tokens[0];
                     int age =int.Parse(tokens[1]);
                     string id = tokens[2];
                     this.citizen = new Citizen(name,age,id);
@@ -35,7 +35,6 @@ namespace BorderControl.Core
                 }
                 else if (tokens.Length ==2)
                 {
-                    string name = tokens[0];
                     string id = tokens[1];
                     this.robot = new Robot(name,id);
                     registerables.Add(robot);

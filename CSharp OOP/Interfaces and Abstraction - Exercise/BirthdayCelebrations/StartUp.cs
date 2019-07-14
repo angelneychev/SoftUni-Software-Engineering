@@ -1,7 +1,8 @@
-﻿namespace BorderControl
+﻿namespace BirthdayCelebrations
 {
     using System;
-    using BorderControl.Core;
+    using BirthdayCelebrations.Core;
+
     public class StartUp
     {
         static void Main(string[] args)

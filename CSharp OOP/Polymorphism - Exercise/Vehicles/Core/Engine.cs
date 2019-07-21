@@ -1,10 +1,9 @@
 ﻿using System.Linq;
 using Vehicles.Models;
+using System;
 
 namespace Vehicles.Core
 {
-    using System;
-
     public class Engine
     {
         public void Run()
@@ -39,17 +38,18 @@ namespace Vehicles.Core
                 if (command == "Drive")
                 {
                     double distance = double.Parse(tokens[2]);
+
                     if (type == "Car")
                     {
                         
                         Console.WriteLine(car.Driver(distance));
                     }
-                    else
+                    else if (type == "Truck")
                     {
                         Console.WriteLine(truck.Driver(distance));
                     }
                 }
-                else 
+                else if(command == "Refuel")
                 {
                     double fuel = double.Parse(tokens[2]);
                     if (type == "Car")
@@ -57,7 +57,7 @@ namespace Vehicles.Core
 
                         car.Refuel(fuel);
                     }
-                    else
+                    else if (type == "Truck")
                     {
                         truck.Refuel(fuel);
                     }

@@ -1,5 +1,4 @@
-﻿using System;
-namespace Vehicles.Models
+﻿namespace Vehicles.Models
 {
     public class Car : Vehicles
     {

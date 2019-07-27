@@ -6,7 +6,7 @@ namespace MortalEngines.Core
 
     public class Engine : IEngine
     {
-        private IMachinesManager manager;
+        private readonly IMachinesManager manager;
 
         public Engine()
         {
@@ -83,7 +83,7 @@ namespace MortalEngines.Core
                 catch (Exception ex)
                 {
                     //•	 "Error:" plus the message of the exception
-                    Console.WriteLine($"Error; {ex.Message}");
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
 
                 Console.WriteLine(result);

@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using MortalEngines.Common;
-    using MortalEngines.Entities.Contracts;
+    using Common;
+    using Contracts;
 
     public class BaseMachine : IMachine
     {

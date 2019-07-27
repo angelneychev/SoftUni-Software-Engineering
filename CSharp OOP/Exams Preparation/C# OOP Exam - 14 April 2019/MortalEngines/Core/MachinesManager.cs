@@ -14,7 +14,7 @@ namespace MortalEngines.Core
         //PilotReport Command 
         private readonly List<IPilot> pilots;
         //MachineReport
-        private List<IMachine> machines;
+        private readonly List<IMachine> machines;
 
         public MachinesManager()
         {
@@ -24,17 +24,17 @@ namespace MortalEngines.Core
 
         public string HirePilot(string name)
         {
-            if (this.pilots.All(x => x.Name != name))
+            if (this.pilots.Any(x => x.Name == name))
+            {
+                //if the pilot with the given name already exists and  you should not create a pilot. 
+                return string.Format(OutputMessages.PilotExists, name);
+            }
+            else
             {
                 //Add Pilot
                 IPilot pilot = new Pilot(name);
                 this.pilots.Add(pilot);
                 return string.Format(OutputMessages.PilotHired, name);
-            }
-            else
-            {
-                //if the pilot with the given name already exists and  you should not create a pilot. 
-                return string.Format(OutputMessages.PilotExists, name);
             }
         }
         //ManufactureTank Command

@@ -1,4 +1,4 @@
-﻿namespace SoftUniRestaurant.Models.Drinks.Entities
+﻿namespace SoftUniRestaurant.Models.Drinks
 {
     public class Alcohol : Drink
     {
@@ -7,7 +7,6 @@
         public Alcohol(string name, int servingSize, string brand) 
             : base(name, servingSize, AlcoholPrice, brand)
         {
-
         }
     }
 }

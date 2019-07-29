@@ -1,4 +1,4 @@
-﻿namespace SoftUniRestaurant.Models.Tables.Entities
+﻿namespace SoftUniRestaurant.Models.Tables
 {
     public class OutsideTable : Table
     {

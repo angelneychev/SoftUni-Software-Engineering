@@ -5,7 +5,14 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Trojan Invasion", "01. Trojan Invasion\01. Trojan Invasion.csproj", "{BE56E420-7605-4123-9B65-186EAF3A1094}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Helens Abduction", "02. Helens Abduction\02. Helens Abduction.csproj", "{E7B78032-C6B4-4B64-96BC-1A447BEDDE51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Helens Abduction", "02. Helens Abduction\02. Helens Abduction.csproj", "{E7B78032-C6B4-4B64-96BC-1A447BEDDE51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FightingArena", "03. Fighting Arena_Skeleton\FightingArena\FightingArena.csproj", "{395C29DB-C32D-4953-B85A-FF7D6F420E17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF66D213-6B35-4F5E-941F-B7E549FB3ACF}"
+	ProjectSection(SolutionItems) = preProject
+		03. Fighting Arena_Problem Description (1).docx = 03. Fighting Arena_Problem Description (1).docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +28,10 @@ Global
 		{E7B78032-C6B4-4B64-96BC-1A447BEDDE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7B78032-C6B4-4B64-96BC-1A447BEDDE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7B78032-C6B4-4B64-96BC-1A447BEDDE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395C29DB-C32D-4953-B85A-FF7D6F420E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395C29DB-C32D-4953-B85A-FF7D6F420E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395C29DB-C32D-4953-B85A-FF7D6F420E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395C29DB-C32D-4953-B85A-FF7D6F420E17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

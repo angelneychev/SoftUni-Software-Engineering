@@ -6,7 +6,7 @@ using PlayersAndMonsters.Models.Players.Contracts;
 
 namespace PlayersAndMonsters.Models.BattleFields
 {
-    public abstract class BattleField : IBattleField
+    public class BattleField : IBattleField
     {
         private const int DefaultDamagePointsForBeginner = 30;
         private const int DefaultHealthPointsForBeginner = 40;

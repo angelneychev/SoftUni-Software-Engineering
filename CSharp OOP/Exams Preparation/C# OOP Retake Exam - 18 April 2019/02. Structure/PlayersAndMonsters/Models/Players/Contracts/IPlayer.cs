@@ -11,6 +11,7 @@
         int Health { get; set; }
 
         bool IsDead { get; }
+       // string username { get; set; }
 
         void TakeDamage(int damagePoints);
     }

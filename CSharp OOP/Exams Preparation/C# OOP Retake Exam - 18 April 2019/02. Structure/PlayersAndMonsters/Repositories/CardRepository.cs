@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using PlayersAndMonsters.Models.Cards.Contracts;
-using PlayersAndMonsters.Models.Players.Contracts;
+using PlayersAndMonsters.Repositories.Contracts;
 
-namespace PlayersAndMonsters.Repositories.Contracts
+namespace PlayersAndMonsters.Repositories
 {
     public class CardRepository : ICardRepository
     {

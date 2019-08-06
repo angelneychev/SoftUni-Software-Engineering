@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using MXGP.Models.Motorcycles.Contracts;
 
 namespace MXGP.Models.Motorcycles
@@ -8,7 +6,7 @@ namespace MXGP.Models.Motorcycles
     public abstract class Motorcycle : IMotorcycle
     {
         private string model;
-        //string model, int horsePower, double cubicCentimeters
+
         protected Motorcycle(string model, int horsePower, double cubicCentimeters)
         {
             this.Model = model;
@@ -19,21 +17,24 @@ namespace MXGP.Models.Motorcycles
         public string Model
         {
             get => this.model;
-            set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value) || value.Length < 4)
                 {
-                    throw new ArgumentException($"Model {model} cannot be less than 4 symbols.");
+                    //TODO value
+                    throw new ArgumentException($"Model {this.model} cannot be less than 4 symbols.");
                 }
-
                 this.model = value;
             }
         }
+
         public abstract int HorsePower { get; protected set; }
+        //TODO private set;
         public double CubicCentimeters { get; }
         public double CalculateRacePoints(int laps)
         {
             return this.CubicCentimeters / this.HorsePower * laps;
         }
+
     }
 }

@@ -37,34 +37,31 @@ namespace MXGP.Models.Races
             get => this.laps;
             private set
             {
-                if (value <1)
+                if (value < 1)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Laps cannot be less than 1.");
                 }
                 this.laps = value;
             }
         }
 
         public IReadOnlyCollection<IRider> Riders => this.riders.AsReadOnly();
-
         public void AddRider(IRider rider)
         {
             if (rider == null)
             {
-                throw new ArgumentNullException(nameof(rider),"Rider cannot be null.");
+                throw new ArgumentNullException(nameof(rider), "Rider cannot be null.");
             }
 
             if (!rider.CanParticipate)
             {
-                throw new ArgumentException($"Rider {rider.Name} could not participate in race.");
+                throw  new ArgumentNullException($"Rider {rider.Name} could not participate in race.");
             }
 
             if (this.riders.Any(x=>x.Name == rider.Name))
             {
                 throw new ArgumentNullException($"Rider {rider.Name} is already added in {this.Name} race.");
             }
-
-            this.riders.Add(rider);
         }
     }
 }

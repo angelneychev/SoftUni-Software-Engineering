@@ -9,7 +9,7 @@ namespace MXGP
         public static void Main(string[] args)
         {
          //TODO Add IEngine
-         Motorcycle varche = new PowerMotorcycle("12214235", 75);
+         Motorcycle varche = new PowerMotorcycle("2222",75);
          Console.WriteLine(varche.HorsePower);
         }
     }

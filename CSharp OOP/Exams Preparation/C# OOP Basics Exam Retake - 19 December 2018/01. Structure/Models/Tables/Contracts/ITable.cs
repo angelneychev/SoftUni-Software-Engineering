@@ -5,6 +5,7 @@ namespace SoftUniRestaurant.Models.Tables.Contracts
 {
     public interface ITable
     {
+
         int TableNumber { get; }
         int Capacity { get; }
         bool IsReserved { get; }
@@ -15,5 +16,6 @@ namespace SoftUniRestaurant.Models.Tables.Contracts
         void Clear();
         string GetFreeTableInfo();
         string GetOccupiedTableInfo();
+
     }
 }

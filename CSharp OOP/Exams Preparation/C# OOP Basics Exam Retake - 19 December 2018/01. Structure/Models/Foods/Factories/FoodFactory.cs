@@ -14,10 +14,9 @@ namespace SoftUniRestaurant.Models.Foods.Factories
                 .GetTypes()
                 .FirstOrDefault(x => x.Name == foodType);
 
-            IFood food = (IFood) Activator.CreateInstance(type,name,price);
+            IFood food = (IFood)Activator.CreateInstance(type, name, price);
 
             return food;
-
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using SoftUniRestaurant.Models.Drinks.Contracts;
 using SoftUniRestaurant.Models.Drinks.Factories;
@@ -20,8 +20,8 @@ namespace SoftUniRestaurant.Core
         private IList<IDrink> drinks;
         private IList<ITable> tables;
         private FoodFactory foodFactory;
-        private DrinkFactorie drinkFactorie;
-        private TableFactorie tableFactorie;
+        private DrinkFactory drinkFactory;
+        private TableFactroy tableFactroy;
         private decimal income;
 
         public RestaurantController()
@@ -30,15 +30,15 @@ namespace SoftUniRestaurant.Core
             this.drinks = new List<IDrink>();
             this.tables = new List<ITable>();
             this.foodFactory = new FoodFactory();
-            this.drinkFactorie = new DrinkFactorie();
-            this.tableFactorie = new TableFactorie();
+            this.drinkFactory = new DrinkFactory();
+            this.tableFactroy = new TableFactroy();
             this.income = 0;
         }
 
         public string AddFood(string type, string name, decimal price)
         {
+            //fix if foog is null
             IFood food = this.foodFactory.CreateFood(type, name, price);
-
             menu.Add(food);
 
             return $"Added {name} ({type}) with price {price:f2} to the pool";
@@ -46,16 +46,15 @@ namespace SoftUniRestaurant.Core
 
         public string AddDrink(string type, string name, int servingSize, string brand)
         {
-            IDrink drink = this.drinkFactorie.CreateDrink(type, name, servingSize, brand);
+            IDrink drink = this.drinkFactory.CreateDrink(type, name, servingSize, brand);
 
             this.drinks.Add(drink);
-
             return $"Added {name} ({brand}) to the drink pool";
         }
 
         public string AddTable(string type, int tableNumber, int capacity)
         {
-            ITable table = this.tableFactorie.CtreatTable(type, tableNumber, capacity);
+            ITable table = this.tableFactroy.CreateTable(type, tableNumber, capacity);
             this.tables.Add(table);
 
             return $"Added table number {tableNumber} in the restaurant";
@@ -70,50 +69,49 @@ namespace SoftUniRestaurant.Core
                 return $"No available table for {numberOfPeople} people";
             }
 
+            //TODO
+            int tableNumber = table.TableNumber;
+            //TODO
+            this.tables.First(x => x.TableNumber == tableNumber);
+            //TODO
             table.Reserve(numberOfPeople);
 
-            return $"Table {table.TableNumber} has been reserved for {numberOfPeople} people";
+            return $"Table {tableNumber} has been reserved for {numberOfPeople} people";
         }
 
         public string OrderFood(int tableNumber, string foodName)
         {
-            ITable table = tables.FirstOrDefault(x => x.TableNumber == tableNumber);
-
+            ITable table = this.tables.FirstOrDefault(x => x.TableNumber == tableNumber);
             if (table == null)
             {
                 return $"Could not find table with {tableNumber}";
             }
 
-            IFood food = menu.FirstOrDefault(x => x.Name == foodName);
-
+            IFood food = this.menu.FirstOrDefault(x => x.Name == foodName);
             if (food == null)
             {
                 return $"No {foodName} in the menu";
             }
 
             table.OrderFood(food);
-
             return $"Table {tableNumber} ordered {foodName}";
         }
 
         public string OrderDrink(int tableNumber, string drinkName, string drinkBrand)
         {
-            ITable table = tables.FirstOrDefault(x => x.TableNumber == tableNumber);
-
+            ITable table = this.tables.FirstOrDefault(x => x.TableNumber == tableNumber);
             if (table == null)
             {
                 return $"Could not find table with {tableNumber}";
             }
 
-            IDrink drink = drinks.FirstOrDefault(x => x.Name == drinkName && x.Brand == drinkBrand);
-
+            IDrink drink = this.drinks.FirstOrDefault(x => x.Name == drinkName && x.Brand == drinkBrand);
             if (drink == null)
             {
                 return $"There is no {drinkName} {drinkBrand} available";
             }
 
             table.OrderDrink(drink);
-
             return $"Table {tableNumber} ordered {drinkName} {drinkBrand}";
         }
 
@@ -121,39 +119,39 @@ namespace SoftUniRestaurant.Core
         {
             ITable table = tables.FirstOrDefault(x => x.TableNumber == tableNumber);
 
+
             decimal bill = table.GetBill();
 
             table.Clear();
 
             this.income += bill;
 
-            return $"Table: {tableNumber}" 
-                   + Environment.NewLine 
-                   + $"Bill: {bill:f2}";
+            return $"Table: {tableNumber}" + Environment.NewLine + $"Bill: {bill:f2}";
+
         }
 
         public string GetFreeTablesInfo()
         {
-            StringBuilder sb = new StringBuilder();
+           StringBuilder result = new StringBuilder();
 
-            foreach (var table in tables.Where(x=>x.IsReserved))
-            {
-                sb.AppendLine(table.GetFreeTableInfo());
-            }
+           foreach (var table in tables.Where(x=>!x.IsReserved))
+           {
+               result.AppendLine(table.GetFreeTableInfo());
+           }
 
-            return sb.ToString().TrimEnd();
+           return result.ToString().TrimEnd();
         }
 
         public string GetOccupiedTablesInfo()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder result = new StringBuilder();
 
             foreach (var table in tables.Where(x => x.IsReserved))
             {
-                sb.AppendLine(table.GetOccupiedTableInfo());
+                result.AppendLine(table.GetOccupiedTableInfo());
             }
 
-            return sb.ToString().TrimEnd();
+            return result.ToString().TrimEnd();
         }
 
         public string GetSummary()

@@ -12,12 +12,11 @@ namespace SoftUniRestaurant.Models.Foods.Factories
             Type type = Assembly
                 .GetCallingAssembly()
                 .GetTypes()
-                .FirstOrDefault(x => x.Name == foodType);
+                .FirstOrDefault(x => x.Name.StartsWith(foodType));
 
-            IFood food = (IFood) Activator.CreateInstance(type,name,price);
+            IFood food = (IFood)Activator.CreateInstance(type, name, price);
 
             return food;
-
         }
     }
 }

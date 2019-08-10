@@ -1,11 +1,16 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Text;
 using PlayersAndMonsters.Models.Cards.Contracts;
 
 namespace PlayersAndMonsters.Models.Cards
 {
     public abstract class Card : ICard
     {
+        private string name;
+        private int damagePoints;
+        private int healthPoints;
+
         protected Card(string name, int damagePoints, int healthPoints)
         {
             this.Name = name;
@@ -13,21 +18,16 @@ namespace PlayersAndMonsters.Models.Cards
             this.HealthPoints = healthPoints;
         }
 
-        private string name;
-        private int damagePoints;
-        private int healthPoints;
-
-        
         public string Name
         {
             get => this.name;
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Card's name cannot be null or an empty string.");
-                }
 
+                    throw new ArgumentException ($"Card's name cannot be null or an empty string.");
+                }
                 this.name = value;
             }
         }
@@ -37,24 +37,24 @@ namespace PlayersAndMonsters.Models.Cards
             get => this.damagePoints;
             set
             {
-                if (value <= 0)
+                if (value <0)
                 {
-                    throw  new ArgumentException("Card's damage points cannot be less than zero.");
+                    throw new ArgumentException($"Card's damage points cannot be less than zero.");
                 }
-
                 this.damagePoints = value;
             }
+
         }
+
         public int HealthPoints
         {
             get => this.healthPoints;
-            set
+            private set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
-                    throw new  ArgumentException("Card's HP cannot be less than zero.");
+                    throw new ArgumentException ($"Card's HP cannot be less than zero.");
                 }
-
                 this.healthPoints = value;
             }
         }

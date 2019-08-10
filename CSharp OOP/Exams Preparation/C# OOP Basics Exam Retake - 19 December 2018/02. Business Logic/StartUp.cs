@@ -1,6 +1,4 @@
-﻿
-using SoftUniRestaurant.Engines;
-using SoftUniRestaurant.Engines.Contracts;
+﻿using SoftUniRestaurant.Core;
 
 namespace SoftUniRestaurant
 {
@@ -8,7 +6,7 @@ namespace SoftUniRestaurant
     {
         public static void Main()
         {
-            IEngine engine = new Engine();
+            Engine engine = new Engine();
             engine.Run();
         }
     }

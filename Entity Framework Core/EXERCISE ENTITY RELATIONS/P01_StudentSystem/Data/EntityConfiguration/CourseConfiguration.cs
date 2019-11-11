@@ -28,6 +28,10 @@ namespace P01_StudentSystem.Data.EntityConfiguration
                 .WithOne(x => x.Course)
                 .HasForeignKey(x => x.CourseId);
             builder
+                .HasMany(x => x.StudentsEnrolled)
+                .WithOne(x => x.Course)
+                .HasForeignKey(x => x.CourseId);
+            builder
                 .Property(x => x.StartDate)
                 .IsUnicode(false);
             builder

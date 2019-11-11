@@ -8,11 +8,11 @@ namespace P01_StudentSystem
     {
         public static void Main(string[] args)
         {
-            using (StudentSystemContext context = new StudentSystemContext())
-            {
-                context.Database.EnsureDeleted();
-                context.Database.EnsureCreated();
-            }
+            //using (StudentSystemContext context = new StudentSystemContext())
+            //{
+            //    context.Database.EnsureDeleted();
+            //    context.Database.EnsureCreated();
+            //}
         }
     }
 }

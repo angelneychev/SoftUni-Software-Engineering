@@ -31,15 +31,18 @@ namespace P03_FootballBetting.Data.EntityConfiguration
             builder
                 .HasOne(x => x.PrimaryKitColor)
                 .WithMany(x => x.PrimaryKitTeams)
-                .HasForeignKey(fk => fk.PrimaryKitColorId);
+                .HasForeignKey(fk => fk.PrimaryKitColorId)
+                .OnDelete(DeleteBehavior.Restrict);
             builder
                 .HasOne(x => x.SecondaryKitColor)
                 .WithMany(x => x.SecondaryKitTeams)
-                .HasForeignKey(fk => fk.SecondaryKitColor);
+                .HasForeignKey(fk => fk.SecondaryKitColorId)
+                .OnDelete(DeleteBehavior.Restrict);
             builder
                 .HasOne(x => x.Town)
                 .WithMany(x => x.Teams)
-                .HasForeignKey(fk => fk.TeamId);
+                .HasForeignKey(fk => fk.TeamId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

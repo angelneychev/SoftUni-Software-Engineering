@@ -1,11 +1,8 @@
-﻿
-
-using P03_FootballBetting.Data.Models;
-
-namespace P03_FootballBetting.Data
+﻿namespace P03_FootballBetting.Data
 {
     using Microsoft.EntityFrameworkCore;
     using System.Reflection;
+    using P03_FootballBetting.Data.Models;
 
     public class FootballBettingContext : DbContext
     {
@@ -32,6 +29,8 @@ namespace P03_FootballBetting.Data
         public DbSet<Position> Positions { get; set; }
 
         public DbSet<PlayerStatistic> PlayerStatistics  { get; set; }
+
+        public DbSet<Game> Games { get; set; }
 
         public DbSet<Bet> Bets  { get; set; }
 

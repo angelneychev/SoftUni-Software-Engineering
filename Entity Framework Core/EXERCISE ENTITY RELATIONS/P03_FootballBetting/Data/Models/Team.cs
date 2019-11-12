@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace P03_FootballBetting.Data.Models
+﻿namespace P03_FootballBetting.Data.Models
 {
+    using System.Collections.Generic;
+
     public class Team
     {
         //•	Team – TeamId, Name, LogoUrl, Initials (JUV, LIV, ARS…), Budget, PrimaryKitColorId, SecondaryKitColorId, TownId
@@ -22,6 +22,7 @@ namespace P03_FootballBetting.Data.Models
 
         public int PrimaryKitColorId { get; set; }
         public Color PrimaryKitColor { get; set; }
+
         public int SecondaryKitColorId { get; set; }
         public Color SecondaryKitColor { get; set; }
 

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace P03_FootballBetting.Data.Models
+﻿namespace P03_FootballBetting.Data.Models
 {
+    using System.Collections.Generic;
+
     public class Country
     {
         //•	Country – CountryId, Name   

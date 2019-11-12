@@ -7,6 +7,11 @@ namespace MXGP.Models.Riders
     public abstract class Rider : IRider
     {
         private string name;
+        //TODO - да добавя към първия проект
+        public Rider(string name)
+        {
+            this.Name = name;
+        }
 
         public string Name
         {

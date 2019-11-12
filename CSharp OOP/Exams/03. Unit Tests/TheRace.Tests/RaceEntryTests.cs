@@ -7,72 +7,62 @@ namespace TheRace.Tests
 {
     public class RaceEntryTests
     {
-        private RaceEntry raceEntry;
-        private UnitMotorcycle unitMotorcycle;
-        private UnitRider unitRider;
+        private UnitRider rider;
+        private UnitMotorcycle motorcycle;
+        private RaceEntry race;
         private Dictionary<string, UnitRider> riders;
-
         [SetUp]
         public void Setup()
         {
             this.riders = new Dictionary<string, UnitRider>();
-            this.raceEntry = new RaceEntry();
-            this.unitMotorcycle = new UnitMotorcycle("Model", 100, 200);
-            this.unitRider = new UnitRider("Name", unitMotorcycle);
-
+            this.motorcycle = new UnitMotorcycle("Honda", 100, 500);
+            this.rider = new UnitRider("Angel",motorcycle);
+            this.race = new RaceEntry();
         }
 
         [Test]
-        public void TestRaceEntryConstructor()
+        public void AddRiderCorrectlyWorks()
         {
-            this.raceEntry.AddRider(unitRider);
-            Assert.Throws<InvalidOperationException>(() => { this.raceEntry.AddRider(unitRider); });
+            Assert.Throws<InvalidOperationException>(() => { this.race.AddRider(null); });
+
+            this.race.AddRider(rider);
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                this.race.AddRider(rider);
+            });
         }
 
         [Test]
-        public void TestRaceEntryCount()
+        public void TestCounterRiders()
         {
-            int expectedCount = 1;
+            this.race.AddRider(rider);
 
-            UnitRider rider = new UnitRider("Pesho", unitMotorcycle);
-
-            this.raceEntry.AddRider(rider);
-
-            Assert.AreEqual(expectedCount, this.raceEntry.Counter);
-        }
-
-        [Test]
-        public void TestRiderNull()
-        {
-            UnitRider rider = null;
-
-            Assert.Throws<InvalidOperationException>(() => { this.raceEntry.AddRider(rider); });
+            Assert.AreEqual(1,this.race.Counter);
         }
 
         [Test]
         public void TestCalculateAverageHorsePower()
         {
-            int expectedRealRider = this.raceEntry.Counter;
+            UnitRider peshoRider = new UnitRider("Pesho", motorcycle);
+            UnitRider ivanRider = new UnitRider("Ivan", motorcycle);
 
-            Assert.Throws<InvalidOperationException>(() =>
-            {
-                this.raceEntry.CalculateAverageHorsePower(); 
-
-            });
+            this.race.AddRider(peshoRider);
+            this.race.AddRider(ivanRider);
+            List<double> averageHorsePower = new List<double> { 100, 100 };
+            double expetedAverage = averageHorsePower.Average();
+            Assert.AreEqual(expetedAverage, race.CalculateAverageHorsePower());
 
         }
-
         [Test]
         public void TestAverageHorsePower()
         {
-            UnitRider peshoRider = new UnitRider("Pesho", unitMotorcycle);
-            UnitRider ivanRider = new UnitRider("Ivan", unitMotorcycle);
+            //int expectedRealRider = this.raceEntry.Counter;
 
-            this.raceEntry.AddRider(peshoRider);
-            this.raceEntry.AddRider(ivanRider);
-            List<double> averageHorsePower = new List<double> {100,100};
-            double expetedAverage = averageHorsePower.Average();
-            Assert.AreEqual(expetedAverage,raceEntry.CalculateAverageHorsePower());
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                this.race.CalculateAverageHorsePower();
+
+            });
 
         }
     }

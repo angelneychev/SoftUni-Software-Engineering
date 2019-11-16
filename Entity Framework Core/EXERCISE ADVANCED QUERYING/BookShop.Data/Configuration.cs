@@ -2,6 +2,6 @@
 {
     internal class Configuration
     {
-        internal static string ConnectionString => @"Server=ANGEL_LAPTOP\SQLEXPRESS;Database=SoftUni;Integrated Security=True";
+        internal static string ConnectionString => @"Server=ANGEL_LAPTOP\SQLEXPRESS;Database=BookShop;Integrated Security=True;";
     }
 }
